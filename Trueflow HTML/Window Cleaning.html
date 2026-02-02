@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrueFlow Cleaning - Window Cleaning</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="min-h-screen bg-slate-50">
+  <div class="min-h-screen bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <i data-lucide="droplets" class="w-8 h-8 text-orange-500"></i>
+          <span class="text-2xl font-bold text-slate-800">TrueFlow Cleaning</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-slate-600 font-medium">
+          <a href="/" class="hover:text-orange-500 transition">Home</a>
+          <a href="#process" class="hover:text-orange-500 transition">Our Process</a>
+          <a href="#pricing" class="hover:text-orange-500 transition">Pricing</a>
+          <a href="#" class="hover:text-orange-500 transition">Contact</a>
+        </div>
+        <button class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition font-semibold">
+          Get Quote
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative py-24 px-6 overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
+      <!-- Window Grid Background -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="grid grid-cols-6 md:grid-cols-12 gap-4 h-full" id="bgWindowGrid"></div>
+      </div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-12">
+          <div class="inline-block mb-6">
+            <div class="bg-orange-500/20 backdrop-blur-sm border-2 border-orange-500 rounded-lg px-6 py-2">
+              <span class="text-orange-400 font-bold">Professional Window Cleaning</span>
+            </div>
+          </div>
+
+          <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            Crystal Clear Views,<br />
+            <span class="text-orange-500">Every Single Pane</span>
+          </h1>
+
+          <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-12">
+            Expert window cleaning services that bring the light back into your space. We clean what you see through, so you can see clearly.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <button class="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-bold text-lg shadow-xl">
+              Schedule Cleaning
+            </button>
+            <a href="#pricing" class="bg-white text-slate-800 px-8 py-4 rounded-lg hover:bg-slate-100 transition font-bold text-lg shadow-xl inline-flex items-center justify-center">
+              See Pricing
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Window Pane Grid -->
+        <div class="mt-16">
+          <div class="max-w-2xl mx-auto">
+            <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-8 border-2 border-slate-700">
+              <p class="text-center text-slate-300 mb-6 text-sm">
+                Hover over each pane to see it "clean"
+              </p>
+
+              <div class="grid grid-cols-3 gap-3" id="paneGrid"></div>
+
+              <p class="text-center text-slate-400 mt-6 text-sm italic">
+                "See the difference professional cleaning makes!"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="py-24 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            What's Included in Every Service
+          </h2>
+          <p class="text-xl text-slate-600">Complete window care from top to bottom</p>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+          <div class="border-8 border-slate-800 rounded-xl p-8 bg-gradient-to-br from-blue-50 to-slate-50 shadow-2xl">
+            <div class="grid md:grid-cols-2 gap-8 relative">
+              <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-4 bg-slate-800 -ml-2 rounded-full"></div>
+
+              <div class="space-y-4" id="includedLeft"></div>
+              <div class="space-y-4" id="includedRight"></div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t-4 border-slate-800">
+              <div class="text-center">
+                <p class="text-lg font-semibold text-slate-800 mb-2">🎉 Plus: Free screen cleaning with every service!</p>
+                <p class="text-slate-600">No hidden fees. No surprises. Just sparkling clean windows.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Our Process -->
+    <section id="process" class="py-24 px-6 bg-gradient-to-br from-slate-900 to-slate-800">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Our 6-Step Process</h2>
+          <p class="text-xl text-slate-300">The method behind our streak-free results</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8" id="processGrid"></div>
+      </div>
+    </section>
+
+    <!-- Window Types -->
+    <section class="py-24 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">All Window Types We Clean</h2>
+          <p class="text-xl text-slate-600">From standard to specialty, we handle them all</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4 mb-12" id="windowTypeButtons"></div>
+
+        <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-xl">
+          <div class="grid md:grid-cols-2">
+            <div class="relative h-96">
+              <img id="windowTypeImg" src="" alt="" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-r from-slate-900/50 to-transparent"></div>
+              <div class="absolute bottom-6 left-6 text-white">
+                <h3 id="windowTypeTitle" class="text-3xl font-bold mb-2"></h3>
+                <p id="windowTypePrice" class="text-xl"></p>
+              </div>
+            </div>
+
+            <div class="p-8 flex flex-col justify-center">
+              <h4 class="text-2xl font-bold text-slate-800 mb-4">Service Details</h4>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-orange-500"></i>
+                  <span class="text-slate-700">Interior & exterior cleaning</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-orange-500"></i>
+                  <span class="text-slate-700">Frame & sill detail work</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-orange-500"></i>
+                  <span class="text-slate-700">Screen cleaning included</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-orange-500"></i>
+                  <span class="text-slate-700">Streak-free guarantee</span>
+                </li>
+              </ul>
+
+              <button class="mt-8 bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-bold">
+                Get Quote for This Type
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Property Types -->
+    <section id="pricing" class="py-24 px-6 bg-gradient-to-br from-orange-50 to-slate-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Services by Property Type</h2>
+          <p class="text-xl text-slate-600">Tailored solutions for every space</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8" id="propertyGrid"></div>
+      </div>
+    </section>
+
+    <!-- Why Professional -->
+    <section class="py-24 px-6 bg-slate-900">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Why Professional Cleaning Matters</h2>
+          <p class="text-xl text-slate-300">See the difference expertise makes</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- DIY -->
+          <div class="relative">
+            <div class="bg-slate-800 border-8 border-slate-700 rounded-xl p-6 h-full">
+              <div class="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
+                DIY Attempt
+              </div>
+              <div class="mt-12 space-y-4 text-red-400">
+                <div class="flex items-start gap-3"><span class="text-2xl">✗</span><p>Streaks and residue left behind</p></div>
+                <div class="flex items-start gap-3"><span class="text-2xl">✗</span><p>Hard water stains remain</p></div>
+                <div class="flex items-start gap-3"><span class="text-2xl">✗</span><p>Risk of scratching glass</p></div>
+                <div class="flex items-start gap-3"><span class="text-2xl">✗</span><p>Hours of your time wasted</p></div>
+                <div class="flex items-start gap-3"><span class="text-2xl">✗</span><p>Inconsistent results</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pro -->
+          <div class="relative">
+            <div class="bg-gradient-to-br from-blue-50 to-white border-8 border-orange-500 rounded-xl p-6 h-full shadow-2xl shadow-orange-500/50">
+              <div class="absolute top-4 left-4 bg-orange-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
+                Professional Clean
+              </div>
+              <div class="mt-12 space-y-4">
+                <div class="flex items-start gap-3 text-green-600">
+                  <i data-lucide="check-circle" class="w-6 h-6 flex-shrink-0"></i>
+                  <p class="text-slate-700">Crystal clear, streak-free finish</p>
+                </div>
+                <div class="flex items-start gap-3 text-green-600">
+                  <i data-lucide="check-circle" class="w-6 h-6 flex-shrink-0"></i>
+                  <p class="text-slate-700">Complete stain removal</p>
+                </div>
+                <div class="flex items-start gap-3 text-green-600">
+                  <i data-lucide="check-circle" class="w-6 h-6 flex-shrink-0"></i>
+                  <p class="text-slate-700">Safe, professional techniques</p>
+                </div>
+                <div class="flex items-start gap-3 text-green-600">
+                  <i data-lucide="check-circle" class="w-6 h-6 flex-shrink-0"></i>
+                  <p class="text-slate-700">Done in a fraction of the time</p>
+                </div>
+                <div class="flex items-start gap-3 text-green-600">
+                  <i data-lucide="check-circle" class="w-6 h-6 flex-shrink-0"></i>
+                  <p class="text-slate-700">Guaranteed satisfaction</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <div class="border-8 border-slate-800 rounded-2xl p-12 bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-2xl">
+          <div class="text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready for Spotless Windows?</h2>
+            <p class="text-xl mb-8 text-orange-100">
+              Book your professional window cleaning service today and see the world more clearly
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <button class="bg-white text-orange-500 px-8 py-4 rounded-lg hover:bg-slate-100 transition font-bold text-lg shadow-xl flex items-center justify-center gap-2">
+                <i data-lucide="calendar" class="w-5 h-5"></i>
+                Schedule Service
+              </button>
+              <button class="bg-slate-900 text-white px-8 py-4 rounded-lg hover:bg-slate-800 transition font-bold text-lg shadow-xl flex items-center justify-center gap-2">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+                Call (555) 123-4567
+              </button>
+            </div>
+
+            <div class="mt-8 pt-8 border-t-2 border-orange-400">
+              <div class="grid grid-cols-3 gap-6 text-center">
+                <div>
+                  <div class="text-3xl font-bold">100%</div>
+                  <div class="text-sm text-orange-100">Satisfaction</div>
+                </div>
+                <div>
+                  <div class="text-3xl font-bold">10+</div>
+                  <div class="text-sm text-orange-100">Years Experience</div>
+                </div>
+                <div>
+                  <div class="text-3xl font-bold">5000+</div>
+                  <div class="text-sm text-orange-100">Happy Clients</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <i data-lucide="droplets" class="w-6 h-6 text-orange-500"></i>
+          <span class="text-xl font-bold text-white">TrueFlow Cleaning</span>
+        </div>
+        <p class="mb-4">Professional Window & Solar Panel Cleaning Services</p>
+        <p class="text-sm">© 2024 TrueFlow Cleaning. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Data (from your React component)
+    const windowTypes = [
+      {
+        type: "Single Hung Windows",
+        description: "Traditional vertical sliding windows",
+        price: "$8-12 per window",
+        image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80"
+      },
+      {
+        type: "Double Hung Windows",
+        description: "Both sashes slide vertically",
+        price: "$10-15 per window",
+        image: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80"
+      },
+      {
+        type: "Bay/Bow Windows",
+        description: "Multiple window panels that project outward",
+        price: "$20-35 per window",
+        image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80"
+      },
+      {
+        type: "French Windows",
+        description: "Multiple glass panes with decorative grids",
+        price: "$15-25 per window",
+        image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80"
+      },
+      {
+        type: "Skylights",
+        description: "Roof-mounted windows requiring special access",
+        price: "$25-40 per skylight",
+        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+      },
+      {
+        type: "Picture Windows",
+        description: "Large fixed windows that don't open",
+        price: "$15-25 per window",
+        image: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800&q=80"
+      }
+    ];
+
+    const includedServices = [
+      "Interior & exterior glass cleaning",
+      "Window frame & sill cleaning",
+      "Screen cleaning & inspection",
+      "Track vacuuming & detail work",
+      "Hard water stain removal",
+      "Bug & debris removal",
+      "Streak-free guarantee",
+      "Post-service walkthrough"
+    ];
+
+    const processSteps = [
+      { number: 1, title: "Pre-Clean Inspection", description: "We examine each window pane for damage, note problem areas, and protect surrounding areas.", icon: "sparkles" },
+      { number: 2, title: "Debris Removal", description: "Screens removed, tracks vacuumed, and loose dirt cleared before wet cleaning begins.", icon: "droplets" },
+      { number: 3, title: "Deep Clean Solution", description: "Professional-grade solution applied to dissolve grime, hard water deposits, and buildup.", icon: "zap" },
+      { number: 4, title: "Squeegee Technique", description: "Expert squeegee work in overlapping strokes for a completely streak-free finish.", icon: "check-circle" },
+      { number: 5, title: "Detail & Polish", description: "Edges wiped, frames cleaned, and final inspection ensures perfection.", icon: "star" },
+      { number: 6, title: "Final Walkthrough", description: "We walk through with you to ensure complete satisfaction before we leave.", icon: "award" }
+    ];
+
+    const propertyTypes = [
+      { icon: "home", title: "Residential", features: ["Single-family homes", "Townhouses", "Condos", "Apartments"], startingPrice: "$149" },
+      { icon: "building-2", title: "Commercial", features: ["Office buildings", "Retail stores", "Restaurants", "Medical facilities"], startingPrice: "$299" },
+      { icon: "sun", title: "Specialty", features: ["High-rise buildings", "Historic properties", "Custom glass", "Sunrooms"], startingPrice: "Custom Quote" }
+    ];
+
+    // State
+    let selectedWindowType = 0;
+    let hoveredPane = null;
+
+    // Init lucide
+    lucide.createIcons();
+
+    // Background grid (72)
+    const bg = document.getElementById('bgWindowGrid');
+    for (let i = 0; i < 72; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'border border-white';
+      bg.appendChild(cell);
+    }
+
+    // Pane grid (9)
+    const paneGrid = document.getElementById('paneGrid');
+
+    function renderPaneGrid() {
+      paneGrid.innerHTML = '';
+      for (let pane = 0; pane < 9; pane++) {
+        const el = document.createElement('div');
+        const isHover = hoveredPane === pane;
+
+        el.className =
+          'aspect-square border-4 rounded-lg transition-all duration-500 cursor-pointer ' +
+          (isHover
+            ? 'bg-gradient-to-br from-blue-100 to-blue-50 border-orange-500 shadow-xl shadow-orange-500/50'
+            : 'bg-slate-700/50 border-slate-600');
+
+        el.addEventListener('mouseenter', () => { hoveredPane = pane; renderPaneGrid(); });
+        el.addEventListener('mouseleave', () => { hoveredPane = null; renderPaneGrid(); });
+
+        if (isHover) {
+          const inner = document.createElement('div');
+          inner.className = 'h-full flex items-center justify-center';
+          inner.innerHTML = '<i data-lucide="sparkles" class="w-8 h-8 text-orange-500 animate-pulse"></i>';
+          el.appendChild(inner);
+        }
+
+        paneGrid.appendChild(el);
+      }
+      lucide.createIcons();
+    }
+    renderPaneGrid();
+
+    // Included services
+    const left = document.getElementById('includedLeft');
+    const right = document.getElementById('includedRight');
+
+    function serviceRow(text) {
+      const row = document.createElement('div');
+      row.className = 'flex items-start gap-3 bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition';
+      row.innerHTML = `
+        <i data-lucide="check-circle" class="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5"></i>
+        <span class="text-slate-700 font-medium">${text}</span>
+      `;
+      return row;
+    }
+
+    includedServices.slice(0, 4).forEach(s => left.appendChild(serviceRow(s)));
+    includedServices.slice(4, 8).forEach(s => right.appendChild(serviceRow(s)));
+
+    // Process cards with the same appear animation logic (delay)
+    const processGrid = document.getElementById('processGrid');
+
+    processSteps.forEach((step, idx) => {
+      const card = document.createElement('div');
+      // start hidden (like React isVisible false)
+      card.className = 'bg-white rounded-xl p-6 shadow-lg border-4 border-slate-700 hover:border-orange-500 transition-all duration-500 opacity-0 translate-y-8';
+      card.innerHTML = `
+        <div class="flex items-start gap-4 mb-4">
+          <div class="bg-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">${step.number}</div>
+          <div class="text-orange-500">
+            <i data-lucide="${step.icon}" class="w-8 h-8"></i>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-slate-800 mb-2">${step.title}</h3>
+        <p class="text-slate-600">${step.description}</p>
+      `;
+      processGrid.appendChild(card);
+
+      setTimeout(() => {
+        card.classList.remove('opacity-0', 'translate-y-8');
+        card.classList.add('opacity-100', 'translate-y-0');
+      }, idx * 100);
+    });
+
+    // Window type selector + display
+    const btnWrap = document.getElementById('windowTypeButtons');
+    const imgEl = document.getElementById('windowTypeImg');
+    const titleEl = document.getElementById('windowTypeTitle');
+    const priceEl = document.getElementById('windowTypePrice');
+
+    function renderSelectedType() {
+      const w = windowTypes[selectedWindowType];
+      imgEl.src = w.image;
+      imgEl.alt = w.type;
+      titleEl.textContent = w.type;
+      priceEl.textContent = w.price;
+    }
+
+    function renderWindowTypeButtons() {
+      btnWrap.innerHTML = '';
+      windowTypes.forEach((w, idx) => {
+        const isActive = idx === selectedWindowType;
+        const btn = document.createElement('button');
+        btn.className =
+          'p-6 rounded-xl text-left transition-all ' +
+          (isActive
+            ? 'bg-orange-500 text-white shadow-xl scale-105'
+            : 'bg-slate-50 text-slate-800 hover:bg-slate-100');
+
+        btn.innerHTML = `
+          <h3 class="font-bold text-lg mb-2">${w.type}</h3>
+          <p class="text-sm mb-2 ${isActive ? 'text-orange-100' : 'text-slate-600'}">${w.description}</p>
+          <p class="font-bold ${isActive ? 'text-white' : 'text-orange-500'}">${w.price}</p>
+        `;
+
+        btn.addEventListener('click', () => {
+          selectedWindowType = idx;
+          renderWindowTypeButtons();
+          renderSelectedType();
+        });
+
+        btnWrap.appendChild(btn);
+      });
+    }
+
+    renderWindowTypeButtons();
+    renderSelectedType();
+
+    // Property cards
+    const propGrid = document.getElementById('propertyGrid');
+
+    propertyTypes.forEach((p) => {
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition group';
+
+      const features = p.features.map(f => `
+        <li class="flex items-center gap-3">
+          <i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>
+          <span class="text-slate-700">${f}</span>
+        </li>
+      `).join('');
+
+      card.innerHTML = `
+        <div class="bg-slate-800 p-6 text-center">
+          <div class="text-orange-500 mb-4 flex justify-center">
+            <i data-lucide="${p.icon}" class="w-12 h-12"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-2">${p.title}</h3>
+          <p class="text-slate-300 text-sm">Starting at</p>
+          <p class="text-4xl font-bold text-orange-500 mt-2">${p.startingPrice}</p>
+        </div>
+
+        <div class="p-8 bg-gradient-to-br from-blue-50/30 to-white">
+          <ul class="space-y-3 mb-6">${features}</ul>
+          <button class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition font-bold group-hover:scale-105">
+            Get Started
+          </button>
+        </div>
+      `;
+
+      propGrid.appendChild(card);
+    });
+
+    // Refresh icons after DOM injection
+    lucide.createIcons();
+  </script>
+</body>
+</html>

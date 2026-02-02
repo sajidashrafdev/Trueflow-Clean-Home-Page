@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrueFlow Cleaning - Solar Panel Cleaning</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="min-h-screen bg-slate-50">
+  <div class="min-h-screen bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <i data-lucide="droplets" class="w-8 h-8 text-orange-500"></i>
+          <span class="text-2xl font-bold text-white">TrueFlow Cleaning</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-slate-300 font-medium">
+          <a href="/" class="hover:text-orange-500 transition">Home</a>
+          <a href="#process" class="hover:text-orange-500 transition">Our Process</a>
+          <a href="#pricing" class="hover:text-orange-500 transition">Pricing</a>
+          <a href="#" class="hover:text-orange-500 transition">Contact</a>
+        </div>
+        <button class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition font-semibold">
+          Get Quote
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative py-24 px-6 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-slate-900">
+      <!-- Sunburst Background Effect -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]">
+          <!-- 12 rays -->
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(0deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(30deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(60deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(90deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(120deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(150deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(180deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(210deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(240deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(270deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(300deg) translateX(-50%);"></div>
+          <div class="absolute top-1/2 left-1/2 w-2 h-96 bg-orange-500 origin-top" style="transform: rotate(330deg) translateX(-50%);"></div>
+        </div>
+      </div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-12">
+          <div class="inline-block mb-6">
+            <div class="bg-orange-500/20 backdrop-blur-sm border-2 border-orange-500 rounded-lg px-6 py-2 flex items-center gap-2">
+              <i data-lucide="sun" class="w-5 h-5 text-orange-400"></i>
+              <span class="text-orange-400 font-bold">Professional Solar Panel Cleaning</span>
+            </div>
+          </div>
+
+          <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            Maximize Your Solar<br />
+            <span class="text-orange-500">Power Output</span>
+          </h1>
+
+          <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-12">
+            Clean solar panels produce up to 30% more energy. Don't let dirt and debris steal your sunshine—or your savings.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <button class="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-bold text-lg shadow-xl flex items-center justify-center gap-2">
+              <i data-lucide="calendar" class="w-5 h-5"></i>
+              Schedule Cleaning
+            </button>
+            <a href="#pricing" class="bg-white text-slate-800 px-8 py-4 rounded-lg hover:bg-slate-100 transition font-bold text-lg shadow-xl inline-flex items-center justify-center">
+              See Pricing
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Solar Panel Grid -->
+        <div class="mt-16">
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-8 border-2 border-blue-700">
+              <p class="text-center text-blue-200 mb-6 text-sm">
+                Hover over panels to see the cleaning effect
+              </p>
+
+              <!-- Grid -->
+              <div id="panelGrid" class="grid grid-cols-4 gap-2 mb-6"></div>
+
+              <!-- Energy Output Visualization -->
+              <div class="bg-slate-900/50 rounded-xl p-6">
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-blue-200 font-semibold">Current Efficiency:</span>
+                  <span id="effValue" class="text-3xl font-bold text-orange-500">60%</span>
+                </div>
+
+                <div class="w-full bg-slate-700 rounded-full h-6 overflow-hidden mb-4">
+                  <div id="effBar"
+                    class="h-full bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 transition-all duration-300 flex items-center justify-end pr-2"
+                    style="width: 60%;">
+                    <i data-lucide="zap" class="w-4 h-4 text-white"></i>
+                  </div>
+                </div>
+
+                <button
+                  id="cleanBtn"
+                  class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition font-bold disabled:opacity-50 disabled:cursor-not-allowed">
+                  See Cleaning Effect
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Efficiency Loss Alert -->
+    <section class="py-12 px-6 bg-gradient-to-r from-orange-500 to-red-500">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+          <div class="flex items-center gap-4">
+            <i data-lucide="alert-triangle" class="w-12 h-12 flex-shrink-0"></i>
+            <div>
+              <h3 class="text-2xl font-bold mb-1">Dirty Panels = Lost Money</h3>
+              <p class="text-orange-100">Your solar system could be losing 25-35% efficiency right now</p>
+            </div>
+          </div>
+          <button class="bg-white text-orange-500 px-8 py-4 rounded-lg hover:bg-orange-50 transition font-bold whitespace-nowrap">
+            Get Free Assessment
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Efficiency Loss Chart -->
+    <section class="py-24 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            How Dirt Affects Your Solar Output
+          </h2>
+          <p class="text-xl text-slate-600">The longer you wait, the more money you lose</p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6 mb-12">
+          <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-xl transition">
+            <div class="text-sm text-slate-600 mb-2">1-2 months</div>
+            <h3 class="font-bold text-lg text-slate-800 mb-2">Light dust</h3>
+            <div class="text-3xl font-bold text-red-500 mb-2">5-10%</div>
+            <div class="text-sm text-slate-600">Power Loss</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-xl transition">
+            <div class="text-sm text-slate-600 mb-2">3-6 months</div>
+            <h3 class="font-bold text-lg text-slate-800 mb-2">Moderate buildup</h3>
+            <div class="text-3xl font-bold text-red-500 mb-2">15-25%</div>
+            <div class="text-sm text-slate-600">Power Loss</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-xl transition">
+            <div class="text-sm text-slate-600 mb-2">6-12 months</div>
+            <h3 class="font-bold text-lg text-slate-800 mb-2">Heavy soiling</h3>
+            <div class="text-3xl font-bold text-red-500 mb-2">25-35%</div>
+            <div class="text-sm text-slate-600">Power Loss</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-xl transition">
+            <div class="text-sm text-slate-600 mb-2">12+ months</div>
+            <h3 class="font-bold text-lg text-slate-800 mb-2">Severe neglect</h3>
+            <div class="text-3xl font-bold text-red-500 mb-2">35-50%</div>
+            <div class="text-sm text-slate-600">Power Loss</div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 border-4 border-slate-700">
+          <h3 class="text-2xl font-bold text-white mb-8 text-center">Annual Energy Loss Calculator</h3>
+
+          <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Dirty -->
+            <div>
+              <div class="text-center mb-4">
+                <div class="inline-block bg-red-500/20 border-2 border-red-500 rounded-lg px-4 py-2">
+                  <span class="text-red-400 font-bold">Dirty Panels (70% Efficiency)</span>
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                <!-- 7 rows -->
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-red-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-red-500 w-[70%]"></div>
+                  </div>
+                  <span class="text-red-400 font-bold">70%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-red-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-red-500 w-[70%]"></div>
+                  </div>
+                  <span class="text-red-400 font-bold">70%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-red-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-red-500 w-[70%]"></div>
+                  </div>
+                  <span class="text-red-400 font-bold">70%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-red-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-red-500 w-[70%]"></div>
+                  </div>
+                  <span class="text-red-400 font-bold">70%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-red-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-red-500 w-[70%]"></div>
+                  </div>
+                  <span class="text-red-400 font-bold">70%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-red-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-red-500 w-[70%]"></div>
+                  </div>
+                  <span class="text-red-400 font-bold">70%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-red-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-red-500 w-[70%]"></div>
+                  </div>
+                  <span class="text-red-400 font-bold">70%</span>
+                </div>
+              </div>
+
+              <div class="mt-6 text-center">
+                <div class="text-4xl font-bold text-red-500 mb-2">$840</div>
+                <div class="text-red-300">Lost annually</div>
+              </div>
+            </div>
+
+            <!-- Clean -->
+            <div>
+              <div class="text-center mb-4">
+                <div class="inline-block bg-green-500/20 border-2 border-green-500 rounded-lg px-4 py-2">
+                  <span class="text-green-400 font-bold">Clean Panels (95% Efficiency)</span>
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                <!-- 7 rows -->
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-green-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-green-500 to-green-400 w-[95%]"></div>
+                  </div>
+                  <span class="text-green-400 font-bold">95%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-green-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-green-500 to-green-400 w-[95%]"></div>
+                  </div>
+                  <span class="text-green-400 font-bold">95%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-green-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-green-500 to-green-400 w-[95%]"></div>
+                  </div>
+                  <span class="text-green-400 font-bold">95%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-green-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-green-500 to-green-400 w-[95%]"></div>
+                  </div>
+                  <span class="text-green-400 font-bold">95%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-green-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-green-500 to-green-400 w-[95%]"></div>
+                  </div>
+                  <span class="text-green-400 font-bold">95%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-green-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-green-500 to-green-400 w-[95%]"></div>
+                  </div>
+                  <span class="text-green-400 font-bold">95%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="battery" class="w-6 h-6 text-green-500"></i>
+                  <div class="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-green-500 to-green-400 w-[95%]"></div>
+                  </div>
+                  <span class="text-green-400 font-bold">95%</span>
+                </div>
+              </div>
+
+              <div class="mt-6 text-center">
+                <div class="text-4xl font-bold text-green-500 mb-2">$0</div>
+                <div class="text-green-300">No money lost</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-blue-200 text-lg">
+              Based on average 6kW system producing $1,200/year
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-24 px-6 bg-gradient-to-br from-blue-50 to-slate-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            Why Choose Professional Solar Cleaning?
+          </h2>
+          <p class="text-xl text-slate-600">The benefits go beyond just cleaner panels</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- 6 cards -->
+          <div class="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition group">
+            <div class="relative mb-4">
+              <div class="absolute top-0 right-0 grid grid-cols-2 gap-1 w-12 h-12 opacity-10">
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+              </div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="trending-up" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Up to 30% More Power</h3>
+            <p class="text-slate-600">Clean panels can produce 25-30% more electricity than dirty ones</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition group">
+            <div class="relative mb-4">
+              <div class="absolute top-0 right-0 grid grid-cols-2 gap-1 w-12 h-12 opacity-10">
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+              </div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="dollar-sign" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Maximize Your Investment</h3>
+            <p class="text-slate-600">Get the full return on your solar system investment with peak efficiency</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition group">
+            <div class="relative mb-4">
+              <div class="absolute top-0 right-0 grid grid-cols-2 gap-1 w-12 h-12 opacity-10">
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+              </div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="shield" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Extend Panel Lifespan</h3>
+            <p class="text-slate-600">Regular cleaning prevents long-term damage and extends system life</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition group">
+            <div class="relative mb-4">
+              <div class="absolute top-0 right-0 grid grid-cols-2 gap-1 w-12 h-12 opacity-10">
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+              </div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="leaf" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Eco-Friendly Process</h3>
+            <p class="text-slate-600">We use pure water cleaning that's safe for your panels and the environment</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition group">
+            <div class="relative mb-4">
+              <div class="absolute top-0 right-0 grid grid-cols-2 gap-1 w-12 h-12 opacity-10">
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+              </div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="clock" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Fast Turnaround</h3>
+            <p class="text-slate-600">Most residential systems cleaned in 2-3 hours with minimal disruption</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition group">
+            <div class="relative mb-4">
+              <div class="absolute top-0 right-0 grid grid-cols-2 gap-1 w-12 h-12 opacity-10">
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+                <div class="bg-orange-500 rounded-sm"></div><div class="bg-orange-500 rounded-sm"></div>
+              </div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="award" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Certified Technicians</h3>
+            <p class="text-slate-600">Trained professionals who understand solar systems and safety protocols</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process -->
+    <section id="process" class="py-24 px-6 bg-slate-900">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Our 6-Step Solar Cleaning Process
+          </h2>
+          <p class="text-xl text-blue-200">Safe, effective, and scientifically proven methods</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- 6 steps -->
+          <div class="bg-slate-800 rounded-xl p-6 border-2 border-blue-700 hover:border-orange-500 transition group">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="sparkles" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">System Assessment</h3>
+            <p class="text-blue-200">We inspect your solar array, note panel condition, and identify problem areas like bird droppings or mineral deposits.</p>
+          </div>
+
+          <div class="bg-slate-800 rounded-xl p-6 border-2 border-blue-700 hover:border-orange-500 transition group">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="droplets" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Dry Debris Removal</h3>
+            <p class="text-blue-200">Soft brushing removes loose dirt, leaves, and debris without scratching the panel surface.</p>
+          </div>
+
+          <div class="bg-slate-800 rounded-xl p-6 border-2 border-blue-700 hover:border-orange-500 transition group">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="sun" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Pure Water Wash</h3>
+            <p class="text-blue-200">Deionized water cleaning dissolves mineral deposits and grime without leaving residue or streaks.</p>
+          </div>
+
+          <div class="bg-slate-800 rounded-xl p-6 border-2 border-blue-700 hover:border-orange-500 transition group">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">4</div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="check-circle" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Frame & Mount Cleaning</h3>
+            <p class="text-blue-200">We clean panel frames, mounting hardware, and ensure proper drainage to prevent future buildup.</p>
+          </div>
+
+          <div class="bg-slate-800 rounded-xl p-6 border-2 border-blue-700 hover:border-orange-500 transition group">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">5</div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="star" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Final Inspection</h3>
+            <p class="text-blue-200">Post-cleaning inspection ensures all panels are spotless and system is ready for optimal performance.</p>
+          </div>
+
+          <div class="bg-slate-800 rounded-xl p-6 border-2 border-blue-700 hover:border-orange-500 transition group">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">6</div>
+              <div class="text-orange-500 group-hover:scale-110 transition">
+                <i data-lucide="trending-up" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Performance Report</h3>
+            <p class="text-blue-200">Optional before/after power output readings show the immediate efficiency improvement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cleaning Frequency -->
+    <section class="py-24 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            How Often Should You Clean?
+          </h2>
+          <p class="text-xl text-slate-600">Recommended frequency based on your location</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-gradient-to-r from-slate-50 to-white rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-lg transition flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">Urban/Industrial</h3>
+              <p class="text-slate-600">Air pollution & dust</p>
+            </div>
+            <div class="bg-orange-500 text-white px-6 py-3 rounded-lg font-bold whitespace-nowrap">Every 3-4 months</div>
+          </div>
+
+          <div class="bg-gradient-to-r from-slate-50 to-white rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-lg transition flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">Suburban</h3>
+              <p class="text-slate-600">Moderate soiling</p>
+            </div>
+            <div class="bg-orange-500 text-white px-6 py-3 rounded-lg font-bold whitespace-nowrap">Every 6 months</div>
+          </div>
+
+          <div class="bg-gradient-to-r from-slate-50 to-white rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-lg transition flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">Rural/Clean Air</h3>
+              <p class="text-slate-600">Light natural debris</p>
+            </div>
+            <div class="bg-orange-500 text-white px-6 py-3 rounded-lg font-bold whitespace-nowrap">Every 8-12 months</div>
+          </div>
+
+          <div class="bg-gradient-to-r from-slate-50 to-white rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-lg transition flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">Near Agriculture</h3>
+              <p class="text-slate-600">Dust & pollen</p>
+            </div>
+            <div class="bg-orange-500 text-white px-6 py-3 rounded-lg font-bold whitespace-nowrap">Every 2-3 months</div>
+          </div>
+
+          <div class="bg-gradient-to-r from-slate-50 to-white rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-lg transition flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">Coastal Areas</h3>
+              <p class="text-slate-600">Salt spray buildup</p>
+            </div>
+            <div class="bg-orange-500 text-white px-6 py-3 rounded-lg font-bold whitespace-nowrap">Every 4-6 months</div>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-gradient-to-br from-blue-50 to-orange-50 rounded-2xl p-8 border-2 border-orange-500">
+          <div class="flex items-start gap-6">
+            <i data-lucide="sun" class="w-12 h-12 text-orange-500 flex-shrink-0"></i>
+            <div>
+              <h3 class="text-2xl font-bold text-slate-800 mb-3">Not Sure What's Right for You?</h3>
+              <p class="text-slate-600 mb-4">
+                We'll assess your specific location, panel type, and environmental factors to recommend the perfect cleaning schedule for maximum efficiency.
+              </p>
+              <button class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition font-bold">
+                Get Free Assessment
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24 px-6 bg-gradient-to-br from-slate-900 to-blue-900">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Solar Cleaning Packages</h2>
+          <p class="text-xl text-blue-200">Transparent pricing for every system size</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <!-- Residential -->
+          <div class="rounded-2xl overflow-hidden bg-slate-800">
+            <div class="p-8 text-center border-b-4 border-blue-700">
+              <div class="inline-block p-4 rounded-xl mb-4 bg-blue-900/50">
+                <i data-lucide="sun" class="w-12 h-12 text-orange-500"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-2 text-white">Residential</h3>
+              <p class="text-sm mb-4 text-blue-200">Up to 20 panels</p>
+              <div class="text-5xl font-bold text-orange-500">$199</div>
+            </div>
+            <div class="p-8">
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500"></i><span class="text-slate-300">Complete panel cleaning</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500"></i><span class="text-slate-300">Frame & mounting cleaning</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500"></i><span class="text-slate-300">Debris removal</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500"></i><span class="text-slate-300">Basic inspection</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500"></i><span class="text-slate-300">30-day warranty</span></li>
+              </ul>
+              <button class="w-full py-4 rounded-lg font-bold transition bg-orange-500 text-white hover:bg-orange-600">
+                Choose Residential
+              </button>
+            </div>
+          </div>
+
+          <!-- Standard (Popular) -->
+          <div class="rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500 to-orange-600 scale-105 shadow-2xl">
+            <div class="bg-slate-900 text-center py-2">
+              <span class="text-orange-400 font-bold text-sm">⭐ MOST POPULAR</span>
+            </div>
+            <div class="p-8 text-center">
+              <div class="inline-block p-4 rounded-xl mb-4 bg-white/20">
+                <i data-lucide="sun" class="w-12 h-12 text-white"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-2 text-white">Standard</h3>
+              <p class="text-sm mb-4 text-orange-100">20-40 panels</p>
+              <div class="text-5xl font-bold text-white">$349</div>
+            </div>
+            <div class="p-8">
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-white"></i><span class="text-white">Everything in Residential</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-white"></i><span class="text-white">Detailed system inspection</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-white"></i><span class="text-white">Performance documentation</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-white"></i><span class="text-white">Bird deterrent check</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-white"></i><span class="text-white">90-day warranty</span></li>
+              </ul>
+              <button class="w-full py-4 rounded-lg font-bold transition bg-white text-orange-500 hover:bg-slate-100">
+                Choose Standard
+              </button>
+            </div>
+          </div>
+
+          <!-- Commercial -->
+          <div class="rounded-2xl overflow-hidden bg-slate-800">
+            <div class="p-8 text-center border-b-4 border-blue-700">
+              <div class="inline-block p-4 rounded-xl mb-4 bg-blue-900/50">
+                <i data-lucide="sun" class="w-12 h-12 text-orange-500"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-2 text-white">Commercial</h3>
+              <p class="text-sm mb-4 text-blue-200">40+ panels</p>
+              <div class="text-5xl font-bold text-orange-500">Custom</div>
+            </div>
+            <div class="p-8">
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500"></i><span class="text-slate-300">Everything in Standard</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500"></i><span class="text-slate-300">Quarterly maintenance plans</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500"></i><span class="text-slate-300">Priority scheduling</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500"></i><span class="text-slate-300">Performance analytics</span></li>
+                <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500"></i><span class="text-slate-300">Annual warranty</span></li>
+              </ul>
+              <button class="w-full py-4 rounded-lg font-bold transition bg-orange-500 text-white hover:bg-orange-600">
+                Choose Commercial
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="text-blue-200 text-lg mb-4">
+            All packages include free inspection and performance documentation
+          </p>
+          <p class="text-slate-400">
+            Maintenance plans available for ongoing care • Ask about seasonal discounts
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <div class="border-8 border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+          <div class="relative bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 p-12">
+            <div class="absolute inset-0 grid grid-cols-8 grid-rows-6 gap-1 p-4 opacity-20">
+              <!-- 48 cells -->
+              <script>
+                // (we keep this area static visually; no need to generate here)
+              </script>
+              <!-- Manually produce enough cells -->
+              <div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div>
+              <div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div>
+              <div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div>
+              <div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div>
+              <div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div>
+              <div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div><div class="bg-blue-300 rounded-sm"></div>
+            </div>
+
+            <div class="relative z-10 text-center text-white">
+              <i data-lucide="sun" class="w-20 h-20 mx-auto mb-6 text-orange-400"></i>
+              <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Boost Your Solar Output?</h2>
+              <p class="text-xl mb-8 text-blue-100">
+                Stop losing money to dirty panels. Schedule your professional cleaning today.
+              </p>
+
+              <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <button class="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-bold text-lg shadow-xl flex items-center justify-center gap-2">
+                  <i data-lucide="calendar" class="w-5 h-5"></i>
+                  Book Service Now
+                </button>
+                <button class="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition font-bold text-lg shadow-xl flex items-center justify-center gap-2">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                  Call (555) 123-4567
+                </button>
+              </div>
+
+              <div class="grid grid-cols-3 gap-6 pt-8 border-t-2 border-blue-400">
+                <div>
+                  <div class="text-4xl font-bold text-orange-400">30%</div>
+                  <div class="text-sm text-blue-100">More Energy</div>
+                </div>
+                <div>
+                  <div class="text-4xl font-bold text-orange-400">2-3hrs</div>
+                  <div class="text-sm text-blue-100">Quick Service</div>
+                </div>
+                <div>
+                  <div class="text-4xl font-bold text-orange-400">100%</div>
+                  <div class="text-sm text-blue-100">Satisfaction</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <i data-lucide="droplets" class="w-6 h-6 text-orange-500"></i>
+          <span class="text-xl font-bold text-white">TrueFlow Cleaning</span>
+        </div>
+        <p class="mb-4">Professional Window & Solar Panel Cleaning Services</p>
+        <p class="text-sm">© 2024 TrueFlow Cleaning. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Interactions -->
+  <script>
+    // Initialize lucide icons
+    lucide.createIcons();
+
+    // Build solar panel grid (12 panels)
+    const panelGrid = document.getElementById('panelGrid');
+
+    const makePanel = (idx) => {
+      const panel = document.createElement('div');
+      panel.className =
+        'aspect-[3/2] rounded-lg transition-all duration-500 cursor-pointer relative overflow-hidden ' +
+        'bg-gradient-to-br from-slate-700 via-slate-600 to-slate-700 border border-slate-500';
+
+      // inner cell pattern
+      const inner = document.createElement('div');
+      inner.className = 'absolute inset-0 grid grid-cols-3 gap-[1px] p-1';
+      for (let i = 0; i < 9; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'rounded-sm bg-slate-800/30';
+        inner.appendChild(cell);
+      }
+      panel.appendChild(inner);
+
+      // hover icon
+      const hoverIcon = document.createElement('div');
+      hoverIcon.className = 'absolute inset-0 hidden items-center justify-center';
+      hoverIcon.innerHTML = '<i data-lucide="sun" class="w-6 h-6 text-orange-400 animate-pulse"></i>';
+      panel.appendChild(hoverIcon);
+
+      panel.addEventListener('mouseenter', () => {
+        panel.className =
+          'aspect-[3/2] rounded-lg transition-all duration-500 cursor-pointer relative overflow-hidden ' +
+          'bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 shadow-xl shadow-orange-500/50 border-2 border-orange-500';
+        // swap cell backgrounds
+        Array.from(inner.children).forEach((cell) => {
+          cell.className = 'rounded-sm bg-blue-300/20';
+        });
+        hoverIcon.classList.remove('hidden');
+        hoverIcon.classList.add('flex');
+        lucide.createIcons();
+      });
+
+      panel.addEventListener('mouseleave', () => {
+        panel.className =
+          'aspect-[3/2] rounded-lg transition-all duration-500 cursor-pointer relative overflow-hidden ' +
+          'bg-gradient-to-br from-slate-700 via-slate-600 to-slate-700 border border-slate-500';
+        Array.from(inner.children).forEach((cell) => {
+          cell.className = 'rounded-sm bg-slate-800/30';
+        });
+        hoverIcon.classList.add('hidden');
+        hoverIcon.classList.remove('flex');
+      });
+
+      return panel;
+    };
+
+    for (let i = 0; i < 12; i++) {
+      panelGrid.appendChild(makePanel(i));
+    }
+    lucide.createIcons();
+
+    // Efficiency animation
+    const effValue = document.getElementById('effValue');
+    const effBar = document.getElementById('effBar');
+    const cleanBtn = document.getElementById('cleanBtn');
+
+    let isAnimating = false;
+    let efficiencyLevel = 60;
+
+    function setEfficiency(val) {
+      efficiencyLevel = val;
+      effValue.textContent = `${val}%`;
+      effBar.style.width = `${val}%`;
+    }
+
+    cleanBtn.addEventListener('click', () => {
+      if (isAnimating) return;
+      isAnimating = true;
+      cleanBtn.disabled = true;
+      cleanBtn.textContent = 'Cleaning in Progress...';
+
+      let current = 60;
+      setEfficiency(current);
+
+      const interval = setInterval(() => {
+        current += 2;
+        setEfficiency(current);
+        if (current >= 95) {
+          clearInterval(interval);
+          setTimeout(() => {
+            isAnimating = false;
+            cleanBtn.disabled = false;
+            cleanBtn.textContent = 'See Cleaning Effect';
+          }, 1000);
+        }
+      }, 50);
+    });
+  </script>
+</body>
+</html>
